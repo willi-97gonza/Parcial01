@@ -19,8 +19,8 @@ def suma_lista(lista):
 ## Error y Correccion
 - Al ejecutar el codigo el mismo terminal nos dice la linea en la cual se presenta el error, en este caso se presentaba un error porque despues de un Else no habian los dos puntos ":". En este caso, al faltar el :, Python no sabe dónde empieza el bloque del else y lanza un error de sintaxis.
 - Otra cosa que debemos hacer para poder ejecutar el codigo y ver los resultados de nuestra operacion, es agregarle unos datos en este caso los llamaremos "listas de prueba" los cuales luego imprimiremos en la terminal y ahi verificamos que el codigo este sirviendo, el codigo correcto debe mostrarnos algo como:
-Suma de [50, 30, 40] es mayor
-Suma de [10, 20, 30] es menor
+>Suma de [50, 30, 40] es mayor
+>Suma de [10, 20, 30] es menor
 
 # EJERCICIO OOP
 
@@ -52,7 +52,7 @@ class Empleado(Persona):
 ## Error y Correccion
 - En la implementación original, la clase Empleado no llamaba al constructor de la clase padre (Persona). Esto causaba que los atributos nombre y edad no existieran en las instancias de Empleado. Este error fue detectado porque al intentar usar el atributo nombre o edad en una instancia de Empleado, se lanza un AttributeError, para solucionar el problema Se agregó una llamada al constructor de la clase base usando "super()." Esto asegura que los atributos nombre y edad definidos en la clase Persona se inicialicen correctamente en objetos de tipo Empleado.
 - Al igual que en el caso anterior para verificar que el codigo este funcionando satisfactoriamente debemos darle unos datos los cuales pueda usar e imprimir, en este caso seran llamados " Casos de prueba" a los cuales les asignaremos un valor y luego imprimiremos en terminal, obteniendo:
-Persona Ana tiene 17 años. ¿Es mayor de edad? False
-Persona Luis tiene 21 años. ¿Es mayor de edad? True
-Empleado Carlos tiene 25 años. ¿Es mayor de edad? True
-Empleado Marta tiene 16 años. ¿Es mayor de edad? False
+>Persona Ana tiene 17 años. ¿Es mayor de edad? False
+>Persona Luis tiene 21 años. ¿Es mayor de edad? True
+>Empleado Carlos tiene 25 años. ¿Es mayor de edad? True
+>Empleado Marta tiene 16 años. ¿Es mayor de edad? False
