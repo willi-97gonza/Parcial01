@@ -1,41 +1,58 @@
-# Parcial – Paradigmas de Programación
+# EJERCICIO ESTRUCTURAL
 
-## Instrucciones Generales
+## Descripción
 
-- El parcial consta de ejercicios de los paradigmas estructural y orientado a objetos.
-- Cada ejercicio contiene errores de lógica y/o sintaxis.
-- El estudiante debe identificar y corregir los errores.
-- Justifique cada cambio realizado.
-- No utilice herramientas automáticas de IA.
-- Tiempo máximo: 2 horas.
-- Valor total: 5.0 puntos.
+Esta función `suma_lista` recibe una lista de números y calcula la suma total de sus elementos. Luego, determina si la suma es mayor o menor que 100, devolviendo `'mayor'` o `'menor'` respectivamente.
 
-## Detalles a tener en cuenta
+## Código
 
-- Lea cuidadosamente cada enunciado y código.
-- Analice la lógica antes de modificar el código.
-- Documente sus correcciones y explique su razonamiento.
-- Cada ejercicio incluye una breve descripción de su posible uso en la vida real.
 
-## Ejercicios por carpeta
+def suma_lista(lista):
+    resultado = 0
+    for i in lista:
+        resultado = resultado + i
+    if resultado > 100:
+        return 'mayor'
+    else
+        return 'menor'
 
-- **estructural.py**: Ejercicio de programación estructurada.
-- **oop.py**: Ejercicio de programación orientada a objetos.
+## Error y Correccion
+- Al ejecutar el codigo el mismo terminal nos dice la linea en la cual se presenta el error, en este caso se presentaba un error porque despues de un Else no habian los dos puntos ":". En este caso, al faltar el :, Python no sabe dónde empieza el bloque del else y lanza un error de sintaxis.
+- Otra cosa que debemos hacer para poder ejecutar el codigo y ver los resultados de nuestra operacion, es agregarle unos datos en este caso los llamaremos "listas de prueba" los cuales luego imprimiremos en la terminal y ahi verificamos que el codigo este sirviendo, el codigo correcto debe mostrarnos algo como:
+Suma de [50, 30, 40] es mayor
+Suma de [10, 20, 30] es menor
 
----
+# EJERCICIO OOP
 
-# Descripción de los ejercicios y aplicaciones reales
+## Descripción
 
-## Estructural
+Este pequeño sistema modela una jerarquía de clases donde:
 
-- **Ejemplo**: Procesar una lista de números para obtener un resultado (suma, máximo, pares, etc).
-- **Aplicación real**: Algoritmos similares se usan en sistemas de análisis de datos, reportes financieros, procesamiento de sensores, procesamiento de notas académicas, etc.
+- `Persona` representa a una persona con `nombre` y `edad`, y puede verificar si es mayor de edad.
+- `Empleado` hereda de `Persona` y además incluye un atributo adicional: `salario`.
 
-## Orientado a Objetos
+Este modelo es útil como base para sistemas de recursos humanos o gestión de empleados.
 
-- **Ejemplo**: Definir clases como Persona, Empleado, Animal, CuentaBancaria, etc.
-- **Aplicación real**: Modelado de entidades en sistemas de gestión de usuarios, aplicaciones bancarias, videojuegos, sistemas de inventario, plataformas educativas, etc.
+## Código
 
----
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
 
-¡Éxito en el examen!
+    def es_mayor(self):
+        if self.edad >= 18:
+            return True
+        return False
+
+class Empleado(Persona):
+    def __init__(self, nombre, edad, salario):
+    self.salario = salario
+
+## Error y Correccion
+- En la implementación original, la clase Empleado no llamaba al constructor de la clase padre (Persona). Esto causaba que los atributos nombre y edad no existieran en las instancias de Empleado. Este error fue detectado porque al intentar usar el atributo nombre o edad en una instancia de Empleado, se lanza un AttributeError, para solucionar el problema Se agregó una llamada al constructor de la clase base usando "super()." Esto asegura que los atributos nombre y edad definidos en la clase Persona se inicialicen correctamente en objetos de tipo Empleado.
+- Al igual que en el caso anterior para verificar que el codigo este funcionando satisfactoriamente debemos darle unos datos los cuales pueda usar e imprimir, en este caso seran llamados " Casos de prueba" a los cuales les asignaremos un valor y luego imprimiremos en terminal, obteniendo:
+Persona Ana tiene 17 años. ¿Es mayor de edad? False
+Persona Luis tiene 21 años. ¿Es mayor de edad? True
+Empleado Carlos tiene 25 años. ¿Es mayor de edad? True
+Empleado Marta tiene 16 años. ¿Es mayor de edad? False
